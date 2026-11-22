@@ -1,10 +1,10 @@
-# omnibase/mailbox
+# omnipack/mailbox
 
 Private messaging for the sites built on [omnisense/omnibase](https://github.com/glitchr-omnisense/omnibase):
 member-to-member conversations with an inbox, sent and archive boxes, each member's own read,
 star, archive and delete state, a box quota and flood control - and, each behind its option,
 desks ("the secretariat"), a directory of recipients, an e-mail that says a message awaits, a
-live refresh, attachments kept in omnibase/office's encrypted vault, and messages stored
+live refresh, attachments kept in omnipack/office's encrypted vault, and messages stored
 encrypted. It is a Symfony bundle (`Base\Mailbox\MailboxBundle`) on omnisense/omnibase 7.0 or later.
 
 Three entities: `Conversation` (a subject, its messages), `Message` (a sender, plain text) and

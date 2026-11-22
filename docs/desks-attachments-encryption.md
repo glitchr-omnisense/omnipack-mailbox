@@ -17,7 +17,7 @@ mailbox:
     notify: true                             # e-mail the others that a message awaits - never its content
     sender: '%env(MAILER_TECHNICAL)%'
     poll: 10                                 # seconds between two checks of the open conversation
-    attachments: true                        # needs omnibase/office; adds the table mailbox_attachment
+    attachments: true                        # needs omnipack/office; adds the table mailbox_attachment
     encrypt: true
     key: '%env(default::MAILBOX_KEY)%'       # base64 of 32 bytes, from the secrets vault
 ```
@@ -54,7 +54,7 @@ application's `assets/bootstrap.js`), which asks `mailbox_state` (`/messagerie/{
 
 ## Attachments
 
-`attachments: true` with omnibase/office installed: a file with a reply, kept in the office's
+`attachments: true` with omnipack/office installed: a file with a reply, kept in the office's
 encrypted vault as a document of the conversation (`context: mailbox:<id>`), read by the
 conversation's participants and the desk's staff (`ConversationAudience`), logged like any other
 document. Pictures are shown in the conversation.

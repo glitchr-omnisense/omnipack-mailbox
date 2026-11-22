@@ -52,7 +52,7 @@ mailbox:
     # Seconds between two checks for new messages in the open conversation (omnibase's Stimulus poll controller); 0: none.
     poll:                 0
 
-    # A file with a reply, kept in omnibase/office's encrypted vault (needs omnibase/office). Adds the table mailbox_attachment.
+    # A file with a reply, kept in omnipack/office's encrypted vault (needs omnipack/office). Adds the table mailbox_attachment.
     attachments:          false
 
     # Subjects and messages stored encrypted (libsodium). Fail closed: with no usable key, nothing is sent.
@@ -88,7 +88,7 @@ the compose form's constraint (`ComposeType`'s `subject_max_length` option).
 `config/services.php` autowires and autoconfigures `src/` but `DependencyInjection/`, `Entity/`,
 the bundle class, `Service/*Exception.php`, `Event/`, `Extension/Entity/` and
 `Attachment/Office/`; `Controller/` is tagged `controller.service_arguments`. With
-omnibase/office's `AudienceResolverInterface`, `Attachment/Office/` is loaded and
+omnipack/office's `AudienceResolverInterface`, `Attachment/Office/` is loaded and
 `mailbox.attachments` is an alias of `VaultAttachments`; without it, `mailbox.attachments` is a
 `stdClass` (no attachments). `RecipientProviderInterface` is autoconfigured with the tag
 `mailbox.recipient_provider`; `NotifyListener` listens to `MessageSentEvent`.

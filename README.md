@@ -12,7 +12,7 @@ removed once nobody keeps it.
 ## Install
 
 ```bash
-composer require omnibase/mailbox
+composer require omnipack/mailbox
 ```
 
 Stable releases follow semantic versioning: this installs the latest 2.x, with omnisense/omnibase 7.0 or later
@@ -89,7 +89,7 @@ docker compose run --rm test composer test-coverage   # → var/coverage/index.h
 
 Off by default, each behind its option: desks a member writes to without knowing a username
 (`mailbox.desks`), a choice of recipients (`directory`), an e-mail that says a message awaits and
-nothing of it (`notify`), a file with a reply kept in omnibase/office's encrypted vault
+nothing of it (`notify`), a file with a reply kept in omnipack/office's encrypted vault
 (`attachments`), the open conversation refreshed (`poll`), subjects and messages stored encrypted,
 failing closed without a key (`encrypt`). See [docs/desks-attachments-encryption.md](docs/desks-attachments-encryption.md).
 

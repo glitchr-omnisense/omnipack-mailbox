@@ -1,5 +1,5 @@
 {
-    "name": "omnibase/mailbox",
+    "name": "omnipack/mailbox",
     "type": "symfony-bundle",
     "description": "Private messaging for base-bundle: member-to-member conversations with an inbox, archives, read state, quotas and flood control",
     "keywords": [
@@ -8,7 +8,7 @@
         "messaging",
         "private messages"
     ],
-    "homepage": "https://github.com/glitchr-omnisense/omnibase-mailbox",
+    "homepage": "https://github.com/glitchr-omnisense/omnipack-mailbox",
     "license": "MIT",
     "authors": [
         {
@@ -41,11 +41,14 @@
     },
     "require-dev": {
         "omnibridge/eloquent": "^2.0",
-        "omnibase/office": "^2.0",
+        "omnipack/office": "^2.0",
         "phpunit/phpunit": "^9.6",
         "symfony/framework-bundle": "^6.0|^7.0|^8.0",
         "symfony/twig-bundle": "^6.0|^7.0|^8.0",
         "symfony/var-dumper": "^6.0|^7.0|^8.0"
+    },
+    "replace": {
+        "omnibase/mailbox": "self.version"
     },
     "scripts": {
         "test": "phpunit",
@@ -63,7 +66,7 @@
     },
     "suggest": {
         "ext-sodium": "Subjects and messages stored encrypted (mailbox.encrypt)",
-        "omnibase/office": "Attachments kept in the office's encrypted document vault (mailbox.attachments)",
+        "omnipack/office": "Attachments kept in the office's encrypted document vault (mailbox.attachments)",
         "symfony/mailer": "The notice that a message awaits (mailbox.notify)"
     },
     "extra": {

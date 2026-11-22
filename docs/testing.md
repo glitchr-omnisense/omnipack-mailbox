@@ -13,7 +13,7 @@ docker compose run --rm test             # the same, in a clean php:8.4 containe
 In omnisense/omnibase's harness, this checkout mounted over the package:
 
 ```bash
-docker run --rm --network none -v "$PWD":/srv/demo/vendor/omnibase/mailbox:ro omnisense/omnibase-harness test mailbox
+docker run --rm --network none -v "$PWD":/srv/demo/vendor/omnipack/mailbox:ro omnisense/omnibase-harness test mailbox
 ```
 
 ```
