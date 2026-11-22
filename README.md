@@ -15,7 +15,10 @@ removed once nobody keeps it.
 composer require omnipack/mailbox
 ```
 
-Stable releases follow semantic versioning: this installs the latest 2.x, with omnisense/omnibase 7.0 or later
+The persistence bridge (omnibridge/doctrine or omnibridge/eloquent) and omnipack/office (the attachments'
+vault) are suggested, not required: [docs/installation.md](docs/installation.md).
+
+Stable releases follow semantic versioning: this installs the latest 3.x, with omnisense/omnibase 7.0 or later
 on Symfony (omnibridge/symfony) and Doctrine ORM (DoctrineBundle). No `minimum-stability` setting is needed.
 
 ```php

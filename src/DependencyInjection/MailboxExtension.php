@@ -20,7 +20,8 @@ class MailboxExtension extends AbstractBaseExtension implements PrependExtension
     {
         $wanted = false;
         foreach ($container->getExtensionConfig('mailbox') as $config) {
-            if (!empty($config['desks']) || !empty($config['attachments'])) {
+            // Attachments are kept in omnipack/office's vault (suggested): without it, there are none to map.
+            if (!empty($config['desks']) || (!empty($config['attachments']) && interface_exists('Base\\Office\\Share\\AudienceResolverInterface'))) {
                 $wanted = true;
             }
         }

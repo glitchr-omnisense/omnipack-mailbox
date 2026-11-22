@@ -38,7 +38,12 @@ final class BackwardCompatibilityTest extends TestCase
             $container = $this->prepend($configs);
             self::assertSame([], $container->getExtensionConfig('doctrine'), 'the extension\'s entities are not mapped');
         }
-        foreach ([[['desks' => ['secretariat' => 'ROLE_SECRETARY']]], [['attachments' => true]]] as $configs) {
+        // Attachments are kept in omnipack/office's vault (suggested since 3.0): asked for alone, they add the table with it only.
+        $vault = interface_exists('Base\\Office\\Share\\AudienceResolverInterface');
+        if (!$vault) {
+            self::assertSame([], $this->prepend([['attachments' => true]])->getExtensionConfig('doctrine'), 'no vault: no attachment to map');
+        }
+        foreach ($vault ? [[['desks' => ['secretariat' => 'ROLE_SECRETARY']]], [['attachments' => true]]] : [[['desks' => ['secretariat' => 'ROLE_SECRETARY']]]] as $configs) {
             $mappings = $this->prepend($configs)->getExtensionConfig('doctrine')[0]['orm']['mappings'];
             self::assertSame('Base\Mailbox\Extension\Entity', $mappings['MailboxExtension']['prefix']);
         }

@@ -9,9 +9,17 @@ order: 10
 
 What `composer.json` requires: PHP 8.2 or later, `doctrine/orm` 2.15 or 3,
 `omnisense/omnibase` 7.0 or later, `omnibridge/symfony` 3.0 or later, `doctrine/doctrine-bundle`, and `symfony/config`,
-`dependency-injection`, `http-kernel`, `form` and `security-bundle` 6, 7 or 8. It suggests
-`ext-sodium` (`mailbox.encrypt`), omnipack/office (`mailbox.attachments`) and `symfony/mailer`
-(`mailbox.notify`). The lists are paginated by the core's paginator.
+`dependency-injection`, `http-kernel`, `form` and `security-bundle` 6, 7 or 8. The lists are paginated by the
+core's paginator.
+
+The rest is optional and switches on only where it is installed:
+
+| Package | What it brings | Without it |
+| --- | --- | --- |
+| omnibridge/doctrine or omnibridge/eloquent | the persistence engine | the site picks one; the bundle names neither |
+| omnipack/office | attachments kept in the office's encrypted vault (`mailbox.attachments`) | no attachments: their table is not mapped even when `mailbox.attachments` is on, the reply form has no file field |
+| `ext-sodium` | subjects and messages stored encrypted (`mailbox.encrypt`) | stored in clear |
+| `symfony/mailer` | the notice that a message awaits (`mailbox.notify`) | no notice |
 
 ## The bundle
 

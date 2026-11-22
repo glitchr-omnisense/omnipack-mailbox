@@ -1,5 +1,21 @@
 # Changelog
 
+## 3.0.0
+
+The bundle presumes no provider: omnibridge/doctrine, the persistence bridge, is suggested.
+
+### Changed
+
+- `omnibridge/doctrine` moves from `require` to `suggest` (and `require-dev`); the bundle names no Doctrine ORM,
+  DBAL or bridge class.
+- Without omnipack/office (suggested) the attachments' entity is no longer mapped when `mailbox.attachments` is on:
+  there is no vault to keep them, the table `mailbox_attachment` is not added (the desks' is, when configured).
+- `require-dev`: `omnipack/office` `^2.0|^3.0`.
+
+### Added
+
+- `tests/Kernel/WithoutSuggestedPackagesTest`: the bundle boots without omnipack/office.
+
 ## 2.0.1
 
 - omnibridge/doctrine `^3.0|^4.0`: the bundle runs on omnibridge/doctrine 4.0 (dates read as `\DateTimeImmutable` in UTC) as on 3.x.
